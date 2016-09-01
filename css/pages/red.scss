@@ -1,0 +1,148 @@
+.red {
+  font-family: 'Raleway';
+  text-align: justify;
+  margin: 50px auto;
+  letter-spacing: 0.5px;
+  line-height: 1.4rem;
+  font-size: 1.03rem;
+  text-align: left;
+  font-weight: 400;
+  max-width: 50%;
+  left: 5%;
+
+  .section__title {
+    color: $red;
+  }
+
+  blockquote {
+    border-left: 4px solid $red;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    position: relative;
+    padding: 50px;
+  }
+  
+  @media (max-width: 800px) {
+    max-width: 90%;
+    left: 0;
+  }
+
+  .button__wrapper {
+    height: 80px;
+    margin-top: 64px;
+    text-align: center;
+
+    .submit__loader {
+      margin: 0 auto;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      -webkit-animation: typingred 1s linear infinite alternate;
+      -moz-animation: typingred 1s linear infinite alternate;
+      animation: typingred 1s linear infinite alternate;
+      top: 30%;
+    }
+
+    button#form__submit {
+      padding: 0.75rem 48px;
+      font-size: 1rem;
+      line-height: 1;
+      background: none;
+      border: 2px solid $red;
+      border-radius: 4px;
+      overflow: hidden;
+      color: $red;
+      transition: color 0.2s ease-in;
+      outline: none;
+      user-select: none;
+      text-transform: uppercase;
+      -webkit-touch-callout: none;
+      -webkit-tap-highlight-color: transparent;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 105%;
+        height: 105%;
+        z-index: -1;
+        background: $red;
+        transition: top 0.25s;
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: $white;
+
+        &::after {
+          top: 0;
+        }
+      }
+
+      @media (max-width: 500px) {
+        font-size: 1.5rem;
+        padding: 0.5rem 0.75rem;
+      }
+    }
+
+    &.disabled {
+      button#form__submit {
+        color: $light-grey;
+        border: 2px solid $light-grey;
+        cursor: not-allowed;
+
+        &::after {
+          background: $light-grey;
+        }
+
+        &:hover {
+          &::after {
+            top: 100%;
+          }
+        }
+      }
+    }
+  }
+  .request__error {
+    color: $red;
+    font-family: 'Lato';
+    font-size: 1.25rem;
+  }
+
+  @-moz-keyframes typingred {
+    0% {
+      background-color: rgba(244,67,54, 1);
+      box-shadow: 12px 0px 0px 0px rgba(244,67,54, 0.2),
+                  24px 0px 0px 0px rgba(244,67,54, 0.2);
+    }
+    25% {
+      background-color: rgba(244,67,54, 0.4);
+      box-shadow: 12px 0px 0px 0px rgba(244,67,54,2),
+                  24px 0px 0px 0px rgba(244,67,54,0.2);
+    }
+    75% {
+      background-color: rgba(244,67,54, 0.4);
+      box-shadow: 12px 0px 0px 0px rgba(244,67,54,0.2),
+                  24px 0px 0px 0px rgba(244,67,54,1);
+    }
+  }
+
+  @keyframes typingred {
+    0% {
+      background-color: rgba(244,67,54, 1);
+      box-shadow: 12px 0px 0px 0px rgba(244,67,54,0.2),
+                  24px 0px 0px 0px rgba(244,67,54,0.2);
+    }
+    25% {
+      background-color: rgba(244,67,54, 0.4);
+      box-shadow: 12px 0px 0px 0px rgba(244,67,54,2),
+                  24px 0px 0px 0px rgba(244,67,54,0.2);
+    }
+    75% {
+      background-color: rgba(244,67,54, 0.4);
+      box-shadow: 12px 0px 0px 0px rgba(244,67,54,0.2),
+                  24px 0px 0px 0px rgba(244,67,54,1);
+    }
+  }
+}
