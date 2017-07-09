@@ -60,6 +60,6 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "compressImages": "./node_modules/.bin/gulp images --verbose",
-    "deploy": "gatsby build --prefix-links && gh-pages -d public"
+    "deploy": "gatsby build --prefix-links && cp ./CNAME ./public/CNAME && gh-pages -d public"
   }
 }
